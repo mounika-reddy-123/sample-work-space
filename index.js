@@ -24,6 +24,12 @@ app.get('/words/:id',(req,res)=>{
     res.send(words[id])
 })
 
+app.get('*',(req,res)=>{
+    const path=req.path
+    console.log(path)
+    res.send(`unable to get info on ${req.path}`)
+})
+
 app.listen(9000,()=>{
     console.log('server is running at 9000')
 })
